@@ -17,7 +17,7 @@ contract CarsToken {
         tvm.accept();
         
         for (uint i = 0; i < tokenCarsArr.length; i++) {
-            require(name == tokenCarsArr[i].name, 101);    
+            require(name != tokenCarsArr[i].name, 101);    
         }
 
         tokenCarsArr.push(CarToken(name, maxSpeed, 0));
