@@ -14,7 +14,6 @@ contract CarsToken {
     mapping(uint => uint) tokenCarToOwner;
 
     function createCarToken(string name, uint maxSpeed) public {
-
         tvm.accept();
         
         for (uint i = 0; i < tokenCarsArr.length; i++) {
@@ -28,8 +27,7 @@ contract CarsToken {
         tokenCarToOwner[keyAsLastNum] = msg.pubkey();
     }
 
-    function setTokenPrice(uint tokenId, uint price) public {
-        
+    function setTokenPrice(uint tokenId, uint price) public {       
         require(msg.pubkey() == tokenCarToOwner[tokenId], 101);
         tvm.accept();
 
@@ -37,7 +35,6 @@ contract CarsToken {
     }
 
     function changeMaxSpeed(uint tokenId, uint maxSpeed) public {
-   
         require(msg.pubkey() == tokenCarToOwner[tokenId], 101);
         tvm.accept();
 
